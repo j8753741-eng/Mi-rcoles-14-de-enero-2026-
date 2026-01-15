@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Carta para ti mi vida</title>
+<title>Carta para Valeria Isabel</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -10,26 +10,80 @@
     body {
         margin: 0;
         padding: 0;
-        background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+        min-height: 100vh;
         font-family: 'Playfair Display', serif;
-        color: #f2f2f2;
+        color: #eef6f8;
+        background: linear-gradient(
+            180deg,
+            #020b13 0%,
+            #031824 30%,
+            #042c3f 60%,
+            #03141f 100%
+        );
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background:
+            radial-gradient(circle at 50% 20%, rgba(120,200,220,0.08), transparent 55%),
+            radial-gradient(circle at 20% 70%, rgba(80,160,190,0.06), transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(60,140,180,0.05), transparent 65%);
+        animation: depth 40s ease-in-out infinite alternate;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(
+                120deg,
+                rgba(255,255,255,0.02) 0%,
+                rgba(255,255,255,0.05) 50%,
+                rgba(255,255,255,0.02) 100%
+            );
+        opacity: 0.35;
+        animation: waves 18s linear infinite;
+    }
+
+    @keyframes depth {
+        from { filter: blur(0px); opacity: 0.5; }
+        to   { filter: blur(2px); opacity: 0.8; }
+    }
+
+    @keyframes waves {
+        from { transform: translateX(-10%); }
+        to   { transform: translateX(10%); }
     }
 
     .container {
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
 
     .letter {
-        background: rgba(0, 0, 0, 0.55);
-        border-radius: 20px;
-        padding: 50px 50px 60px;
+        background: rgba(3, 20, 30, 0.65);
+        backdrop-filter: blur(6px);
+        border-radius: 22px;
+        padding: 55px 50px 65px;
         max-width: 900px;
-        box-shadow: 0 0 60px rgba(0,0,0,0.6);
+        box-shadow:
+            0 0 40px rgba(0,0,0,0.6),
+            inset 0 0 40px rgba(120,200,220,0.05);
         line-height: 1.9;
-        animation: fadeIn 2.5s ease;
+        animation: emerge 2.5s ease;
+    }
+
+    @keyframes emerge {
+        from { opacity: 0; transform: translateY(40px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
 
     .video {
@@ -37,15 +91,14 @@
         padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
-        border-radius: 16px;
+        border-radius: 18px;
         margin-bottom: 45px;
-        box-shadow: 0 0 30px rgba(0,0,0,0.6);
+        box-shadow: 0 0 35px rgba(0,0,0,0.7);
     }
 
     .video iframe {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         border: none;
@@ -63,121 +116,134 @@
         font-size: 3.2rem;
         text-align: center;
         margin-bottom: 40px;
-        color: #ffd1dc;
+        color: #cdebf3;
+        text-shadow: 0 0 12px rgba(120,200,220,0.4);
     }
 
     p {
-        margin-bottom: 24px;
+        margin-bottom: 26px;
         text-align: justify;
     }
 
     .name {
         font-style: italic;
-        color: #ffd1dc;
+        color: #bfe6f2;
     }
 
     .signature {
-        margin-top: 50px;
+        margin-top: 55px;
         text-align: right;
         font-style: italic;
         font-size: 1.1rem;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+        color: #d6f1f7;
     }
 </style>
 </head>
 
 <body>
 <div class="container">
-    <div class="letter">
+<div class="letter">
 
-        <!-- VIDEO -->
-        <div class="video">
-            <iframe 
-                src="https://www.youtube.com/embed/Qy3_e1hUsdY" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
+<div class="video">
+<iframe src="https://youtu.be/zLX_GcXt2pI?si=r-RxoW38LmyjxRNy"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
 
-        <!-- CARTA -->
-        <div class="date">
-            Miércoles 14 de enero de 2026 · Noche
-        </div>
+<div class="date">
+Miércoles 14 de enero de 2026 · Noche
+</div>
 
-        <div class="title">
-            Amor mío
-        </div>
+<div class="title">Amor mío</div>
 
-        <p>
-            La noche ha caído con suavidad, como si supiera que este momento merece calma.
-            Afuera el mundo sigue su curso, pero aquí, en este instante, todo se vuelve más
-            lento porque te pienso.
-        </p>
+<p>
+La noche ha caído con suavidad, como si el mundo entero hubiera decidido bajar la voz. Todo
+parece más lento, más profundo, más honesto. En este silencio que no pesa, apareces tú,
+ocupándolo todo sin hacer ruido. Pensarte es como sumergirme sin miedo, como dejar que el
+tiempo se disuelva poco a poco.
+</p>
 
-        <p>
-            No escribo esta carta para ser breve. La escribo para quedarme. Para recorrer sin
-            prisa cada emoción que despiertas en mí. Porque lo que siento por ti no se explica
-            en pocas líneas: se vive, se respira y se deja fluir.
-        </p>
+<p>
+Escribo esta carta desde un lugar tranquilo, desde ese espacio interior donde ya no hay
+prisa ni ruido. No la escribo para cumplir algo, ni para llenar un momento. La escribo
+porque lo que siento por ti no cabe en un solo pensamiento, porque hay emociones que
+necesitan extenderse, respirar, flotar.
+</p>
 
-        <p>
-            Amarte es habitar muchos mundos a la vez. Hay romanticismo cuando imagino tu rostro
-            bajo la luz tenue de la noche. Hay ternura cuando recuerdo tu voz y la forma en que
-            tu risa desarma mis días. Hay pasión cuando la distancia pesa. Y hay poesía,
-            inevitable, porque tu existencia transforma todo en palabra.
-        </p>
+<p>
+Amarte es una experiencia lenta. No llega de golpe, no empuja, no exige. Se instala
+despacio, como el agua cuando cubre todo sin romper nada. Contigo aprendí que el amor no
+siempre grita; a veces simplemente permanece.
+</p>
 
-        <p>
-            Nuestro amor no responde a un solo ritmo. A veces es lento y profundo, como una
-            balada que se escucha con los ojos cerrados. Otras veces es intenso, vibrante,
-            imposible de ignorar. Y muchas noches, como esta, es una historia larga que no
-            quiero terminar.
-        </p>
+<p>
+Hay algo profundamente hermoso en la calma que siento cuando pienso en ti. No es ausencia
+de intensidad, es otra forma de sentirla. Es saber que puedo bajar la guardia, que no tengo
+que correr, que no tengo que demostrar nada. Contigo, simplemente soy.
+</p>
 
-        <p class="name">
-            Valeria Isabel Petro Villazón,
-        </p>
+<p>
+Nuestro amor no necesita superficie. Puede existir en lo profundo, donde no llegan las
+miradas ajenas ni las dudas ruidosas. Ahí, donde todo es más sincero, donde los sentimientos
+no se esconden, donde el silencio también ama.
+</p>
 
-        <p>
-            decir tu nombre es traer paz. Desde que llegaste, algo en mí encontró su lugar.
-            Cambiaste la forma en que miro el tiempo, el futuro y hasta mis propios miedos.
-            Contigo entendí que amar no es solo sentir, sino elegir, cuidar y permanecer.
-        </p>
+<p>
+A veces me descubro pensando en ti sin darme cuenta. En cómo sería compartir una noche
+tranquila, en cómo se sentiría tu presencia sin palabras, en cómo incluso el silencio
+sería suficiente. Y entonces entiendo que amar también es eso: imaginar paz.
+</p>
 
-        <p>
-            Esta carta es extensa porque mi amor no conoce atajos. Porque no quiero saltarme
-            nada de lo que siento. Porque cada parte de ti merece espacio, y cada latido
-            necesita ser dicho.
-        </p>
+<p>
+Hay ternura en la forma en que existes en mi vida. En lo cotidiano, en lo simple, en lo que
+no se presume. Hay belleza en saber que alguien importa sin necesidad de exagerarlo.
+</p>
 
-        <p>
-            Te amo en lo simple y en lo profundo. Te amo cuando el día es ligero y cuando pesa.
-            Te amo con calma, con verdad, con una certeza que no necesita promesas exageradas,
-            solo presencia.
-        </p>
+<p>
+Nuestro amor no sigue un solo ritmo. A veces es lento y suave, otras veces es intenso y
+profundo. Pero siempre es honesto. Siempre vuelve a ese lugar donde ambos podemos
+respirar sin miedo.
+</p>
 
-        <p>
-            Que esta noche te abrace aunque estemos lejos.<br>
-            Que estas palabras te acompañen cuando cierres los ojos.<br>
-            Que sientas que hay alguien pensando en ti con el corazón lleno, sin prisas, sin dudas.
-        </p>
+<p class="name">
+Valeria Isabel Petro Villazón,
+</p>
 
-        <p>
-            Porque si algo tengo claro,<br>
-            es que no importa cuántas cartas escriba,<br>
-            nunca se me va a acabar el amor para ti.
-        </p>
+<p>
+decir tu nombre es sentir hogar incluso en lo más hondo. Desde que llegaste, algo en mí dejó
+de resistirse. Amar contigo es rendirse a lo verdadero, a lo que no necesita explicaciones
+ni promesas ruidosas.
+</p>
 
-        <div class="signature">
-            Con todo lo que soy,<br>
-            y con todo lo que siento por ti.
-        </div>
+<p>
+Te amo de una forma tranquila, pero firme. De esas que no se cansan, que no se apresuran,
+que no se apagan con el tiempo. Te amo con una certeza silenciosa que no necesita
+confirmación.
+</p>
 
-    </div>
+<p>
+Si esta carta es larga es porque no quiero quedarme corto contigo. Porque cada emoción
+merece espacio. Porque amarte no se resume, se habita.
+</p>
+
+<p>
+Que esta noche te envuelva suave.<br>
+Que estas palabras te alcancen sin ruido.<br>
+Que sientas que hay alguien que te ama incluso en el silencio.
+</p>
+
+<p>
+Porque si algo tengo claro,<br>
+es que no importa cuántas cartas escriba,<br>
+nunca se me va a acabar el amor para ti.
+</p>
+
+<div class="signature">
+Con todo lo que soy,<br>
+y con todo lo que siento por ti.
+</div>
+
+</div>
 </div>
 </body>
 </html>
